@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="380" viewBox="0 0 1600 380" role="img" aria-labelledby="title desc">
+<title id="title">MARGIN research workflow</title>
+<desc id="desc">Contrast-enhanced CT, segmentation, 3D reconstruction, feature extraction, and patient-level margin prediction.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#83976e"/></marker></defs>
+<rect width="1600" height="380" fill="#f7f7f1"/>
+<g font-family="Arial, Helvetica, sans-serif"><text x="40" y="50" font-size="15" letter-spacing="3" fill="#62746a">MARGIN / RESEARCH WORKFLOW</text>
+<rect x="40" y="100" width="272" height="200" rx="8" fill="#fff" stroke="#b9c8b6"/>
+<text x="64" y="141" font-size="15" letter-spacing="2" fill="#788c62">01</text>
+<text x="64" y="184" font-size="23" font-weight="600" fill="#173e34">Contrast-enhanced</text>
+<text x="64" y="212" font-size="23" font-weight="600" fill="#173e34">CT</text>
+<text x="64" y="264" font-size="16" fill="#62746a">Preoperative imaging</text>
+<path d="M 320 200 H 342" fill="none" stroke="#83976e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="352" y="100" width="272" height="200" rx="8" fill="#fff" stroke="#b9c8b6"/>
+<text x="376" y="141" font-size="15" letter-spacing="2" fill="#788c62">02</text>
+<text x="376" y="184" font-size="23" font-weight="600" fill="#173e34">Segmentation</text>
+<text x="376" y="264" font-size="16" fill="#62746a">Biliary tree &amp; tumor</text>
+<path d="M 632 200 H 654" fill="none" stroke="#83976e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="664" y="100" width="272" height="200" rx="8" fill="#fff" stroke="#b9c8b6"/>
+<text x="688" y="141" font-size="15" letter-spacing="2" fill="#788c62">03</text>
+<text x="688" y="184" font-size="23" font-weight="600" fill="#173e34">3D</text>
+<text x="688" y="212" font-size="23" font-weight="600" fill="#173e34">reconstruction</text>
+<text x="688" y="264" font-size="16" fill="#62746a">Reviewed anatomical masks</text>
+<path d="M 944 200 H 966" fill="none" stroke="#83976e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="976" y="100" width="272" height="200" rx="8" fill="#fff" stroke="#b9c8b6"/>
+<text x="1000" y="141" font-size="15" letter-spacing="2" fill="#788c62">04</text>
+<text x="1000" y="184" font-size="23" font-weight="600" fill="#173e34">Feature extraction</text>
+<text x="1000" y="264" font-size="16" fill="#62746a">Imaging &amp; anatomy</text>
+<path d="M 1256 200 H 1278" fill="none" stroke="#83976e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="1288" y="100" width="272" height="200" rx="8" fill="#173e34" stroke="#b9c8b6"/>
+<text x="1312" y="141" font-size="15" letter-spacing="2" fill="#d6e397">05</text>
+<text x="1312" y="184" font-size="23" font-weight="600" fill="#f7f8ee">Margin prediction</text>
+<text x="1312" y="264" font-size="16" fill="#c7d6ca">Patient-level R0 / R1</text>
+<text x="40" y="348" font-size="15" fill="#62746a">High-level overview · Patient-level margin-status prediction</text>
+</g></svg>
