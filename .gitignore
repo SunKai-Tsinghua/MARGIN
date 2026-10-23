@@ -3,3 +3,11 @@
 node_modules/
 __pycache__/
 .preview/
+.venv/
+*.pth
+*.nii
+*.nii.gz
+*.npz
+segmentation/models/
+segmentation/outputs/
+.ipynb_checkpoints/

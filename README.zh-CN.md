@@ -12,10 +12,10 @@ MARGIN 面向肝门部胆管癌（pCCA）的术前 CT 切缘状态预测，结�
 
 | 开源部分 | 作用 | 计划提供的内容 | 当前状态 |
 | --- | --- | --- | --- |
-| **第一部分：基于 nnU-Net 的胆管及肿瘤分割模型** | 从术前增强 CT 中自动分割胆管树和原发肿瘤 | 训练后的模型权重、预处理与推理说明、输出标签说明 | **即将发布** |
+| **第一部分：基于 nnU-Net 的胆管及肿瘤分割模型** | 从术前增强 CT 中自动分割胆管树和原发肿瘤 | 最佳模型权重、Python / Notebook 推理入口、配置及训练曲线 | **已提供** |
 | **第二部分：MARGIN 训练代码** | 融合空间、局部和全局特征，进行患者级切缘状态预测 | MARGIN 训练代码及配置说明 | **即将发布** |
 
-当前目录包含项目网站和说明文档，尚不包含已发布的分割模型权重或可执行的 MARGIN 训练代码。对应资源发布时，将补充下载入口与可运行命令。
+分割模型已提供[权重下载](https://github.com/SunKai-Tsinghua/MARGIN/releases/download/segmentation-v1.0.0/MARGIN-segmentation-v1.0.0.zip)、[Python 推理脚本](segmentation/inference.py)和 [Notebook](segmentation/inference.ipynb)。MARGIN 训练代码仍待发布。
 
 ## 第一部分：基于 nnU-Net 的胆管及肿瘤分割模型
 
@@ -23,7 +23,11 @@ MARGIN 面向肝门部胆管癌（pCCA）的术前 CT 切缘状态预测，结�
 
 论文中的分割模型基于 **197 例人工标注的 pCCA CT** 训练。研究流程中，自动分割结果由两位高级放射科医师复核和修正后，才用于三维重建与下游特征提取。
 
-发布时将明确 nnU-Net 版本、模型配置、运行环境、标签定义、预处理及推理方法。论文所述的 **1 × 1 × 1 mm 重采样属于下游特征提取流程**，不能据此推定分割模型的训练或推理分辨率。
+模型为 nnU-Net v2 `ResidualEncoderUNet`，配置为 `3d_fullres`，使用 `fold_all/checkpoint_best.pth`。实际 `plans.json` 指定 1 mm 各向同性间距；此信息直接来自模型配置。
+
+Model details 已补充环境安装、标准 nnU-Net 命令、Python / Notebook 用法及输出标签。该模型采用区域式分割：`danguan=[1,2]`、`tumor=2`；导出的标签为 0 背景、1 非肿瘤胆管标签、2 肿瘤。
+
+本次未执行实际推理测试，训练曲线不代表独立测试集分割性能。公开资源不包含 `validation` 文件夹、测试 CT 或预测体积。
 
 [分割模型说明](docs/segmentation-model.md)
 

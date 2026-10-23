@@ -8,7 +8,7 @@
 
 [Project website](https://sunkai-tsinghua.github.io/MARGIN/) · [Segmentation models](#part-1-nnu-net-biliary-and-tumor-segmentation-models) · [MARGIN training code](#part-2-margin-training-code) · [中文说明](README.zh-CN.md)
 
-**Release status: coming soon**
+**Segmentation weights and inference scripts available · MARGIN training code coming soon**
 
 </div>
 
@@ -23,12 +23,12 @@ MARGIN is a research project on CT-based prediction of microscopic margin status
 
 These components address different tasks. The segmentation models generate anatomical masks; MARGIN integrates anatomical spatial features and multiscale CT features to predict margin status. **MARGIN is not the segmentation network.**
 
-| Component | Task | Planned release | Status |
+| Component | Task | Release materials | Status |
 | --- | --- | --- | --- |
-| **Part 1: nnU-Net segmentation models** | Biliary tree and primary tumor segmentation from CT | Trained model weights and inference instructions | **Coming soon** |
+| **Part 1: nnU-Net segmentation models** | Biliary tree and primary tumor segmentation from CT | Best checkpoint, Python / notebook inference, and training curves | **Available** |
 | **Part 2: MARGIN training code** | Multimodal learning for patient-level R0 / R1 prediction | Training code and configuration instructions | **Coming soon** |
 
-The current repository contains the project website and documentation. Model weights and executable MARGIN training code have **not yet been released**. Download links and runnable commands will be added with their corresponding releases.
+Download the [segmentation model package](https://github.com/SunKai-Tsinghua/MARGIN/releases/download/segmentation-v1.0.0/MARGIN-segmentation-v1.0.0.zip), then follow the [model details and inference instructions](docs/segmentation-model.md). Executable MARGIN training code remains forthcoming.
 
 ## Part 1: nnU-Net biliary and tumor segmentation models
 
@@ -38,12 +38,12 @@ This release focuses on the **customized 3D nnU-Net models used to segment the b
 - **Input:** preoperative contrast-enhanced CT.
 - **Segmentation targets:** biliary tree and primary tumor.
 - **Training cohort reported in the manuscript:** 197 manually annotated pCCA CT scans.
-- **Planned package:** trained model weights and instructions for preprocessing, inference, and interpreting the output labels.
-- **Availability:** coming soon.
+- **Model:** nnU-Net v2 `ResidualEncoderUNet`, `3d_fullres`, `fold_all/checkpoint_best.pth`.
+- **Available:** trained checkpoint, [Python script](segmentation/inference.py), [Notebook](segmentation/inference.ipynb), configuration and training curves.
 
 In the reported study, two senior radiologists reviewed and refined all automated segmentation results before the finalized masks were used for 3D biliary reconstruction. CT images and masks were subsequently resampled to 1 × 1 × 1 mm for downstream feature extraction; this is **not a specification of the segmentation model's training or inference spacing**.
 
-The exact nnU-Net version, model configuration, label mapping, environment requirements, and inference commands will be documented with the model release. No segmentation Dice or IoU score is claimed on this page.
+Model configuration, region-based label mapping, environment requirements, and standard nnU-Net inference commands are documented in the model card. The supplied plans independently specify 1 mm isotropic spacing. Inference has not been executed for this release, and no independent segmentation Dice or IoU score is claimed.
 
 See the [segmentation model card](docs/segmentation-model.md). For the upstream framework, see [MIC-DKFZ/nnUNet](https://github.com/MIC-DKFZ/nnUNet).
 
