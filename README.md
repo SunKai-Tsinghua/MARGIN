@@ -14,14 +14,14 @@
 
 ## Overview
 
-MARGIN is a research project on CT-based prediction of microscopic margin status in **perihilar cholangiocarcinoma (pCCA)**. The workflow combines anatomical reconstruction with spatial, local, and global image representations to support research on individualized surgical planning.
+MARGIN is a research project on CT-based prediction of microscopic margin status in **perihilar cholangiocarcinoma (pCCA)**. The workflow combines CT imaging and anatomical reconstruction to study patient-level margin-status prediction.
 
 **Our open-source release is organized into two distinct parts:**
 
 1. **nnU-Net-based biliary and tumor segmentation models** — trained models for segmenting the biliary tree and primary tumor from preoperative contrast-enhanced CT.
 2. **MARGIN training code** — code for training the downstream multimodal framework for patient-level margin-status prediction.
 
-These components address different tasks. The segmentation models generate anatomical masks; MARGIN integrates anatomical spatial features and multiscale CT features to predict margin status. **MARGIN is not the segmentation network.**
+These components address different tasks. The segmentation models generate anatomical masks; MARGIN uses imaging and anatomical information to predict margin status. **MARGIN is not the segmentation network.**
 
 | Component | Task | Release materials | Status |
 | --- | --- | --- | --- |
@@ -49,48 +49,27 @@ See the [segmentation model card](docs/segmentation-model.md). For the upstream 
 
 ## Part 2: MARGIN training code
 
-This release contains the **training code for MARGIN**, the multimodal adaptive resection guided integration network used for patient-level margin-status prediction.
+Training code for **MARGIN**, the downstream patient-level margin-status prediction framework, is planned for a future release. The framework uses CT and anatomical information to study R0 / R1 margin status.
 
-The framework integrates three complementary feature streams:
+**Planned package:** training code, configuration instructions, dependencies, and usage documentation. MARGIN training code, prediction checkpoints, and clinical data are not included in the current release.
 
-| Stream | Representation |
-| --- | --- |
-| **Spatial features** | Eight features derived from the patient-specific 3D biliary model and reconstructed resection planes, describing tumor burden, margin geometry, and tumor–biliary relationships |
-| **Local image features** | Six local CT patches from the main tumor, tumor–biliary interface, and reconstructed margin regions, encoded by a shared-weight 3D Mamba backbone |
-| **Global image features** | Broader liver and tumor-context representations extracted using Liver-DINO |
-
-These streams are integrated by a residual multimodal fusion framework. Set-level scores are averaged within each patient for patient-level evaluation. Histopathological assessment of ductal margins serves as the reference standard.
-
-**Planned package:** MARGIN training code and configuration instructions. Dependencies, feature preparation, training entry points, and evaluation instructions will be provided when the code is released. This release should not be interpreted as an announcement that clinical data, Liver-DINO weights, or MARGIN checkpoints are currently available.
-
-See the [MARGIN training overview](docs/margin-training.md).
+See the [MARGIN release overview](docs/margin-training.md).
 
 ## Study workflow
 
-![MARGIN study design and workflow](assets/study-workflow.png)
+![High-level MARGIN workflow](assets/study-workflow.svg)
 
-**CT segmentation → reviewed anatomical masks → 3D biliary reconstruction → spatial, local and global feature extraction → MARGIN training and patient-level prediction.**
+**Contrast-enhanced CT → segmentation → 3D reconstruction → feature extraction → patient-level margin prediction.**
 
 In this retrospective study, resection planes were reconstructed using surgical records and postoperative CT. The framework has not yet been validated for comparing multiple alternative surgical plans for an individual patient.
 
 ## Research findings
 
-The manuscript reports a retrospective multicenter study of **410 patients** from **three centers**, including an independent external test set of **176 patients**.
+The radar chart summarizes **MARGIN** performance in internal and external evaluation cohorts across accuracy, sensitivity, specificity, positive predictive value, negative predictive value, and F1 score.
 
-| MARGIN metric | Independent external test set |
-| --- | ---: |
-| AUROC | 0.87 |
-| Accuracy | 0.84 |
-| Sensitivity | 0.76 |
-| Specificity | 0.87 |
-| Positive predictive value | 0.72 |
-| Negative predictive value | 0.89 |
+![MARGIN performance radar chart: internal and external sets](assets/model-performance.png)
 
-**These are patient-level margin-status prediction results for MARGIN, not segmentation performance metrics for nnU-Net.**
-
-In a paired reader study involving five hepatobiliary surgeons, mean accuracy increased from 0.71 to 0.84 and mean sensitivity from 0.20 to 0.62 with MARGIN assistance. Mean specificity remained 0.94.
-
-![Model performance in internal and external cohorts](assets/model-performance.png)
+These measures describe **patient-level margin-status prediction**, not nnU-Net segmentation performance.
 
 ## Research scope and availability
 
