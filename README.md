@@ -71,6 +71,10 @@ The radar chart summarizes **MARGIN** performance in internal and external evalu
 
 These measures describe **patient-level margin-status prediction**, not nnU-Net segmentation performance.
 
+### Paired reader study
+
+In a paired reader study involving five hepatobiliary surgeons, mean accuracy increased from **0.71 to 0.84** and mean sensitivity from **0.20 to 0.62** with MARGIN assistance. Mean specificity remained **0.94**. These values compare unassisted with MARGIN-assisted reader assessment.
+
 ## Research scope and availability
 
 This is a research project. The reported study was retrospective, restricted to resected patients, and conducted within one country. Prospective validation remains necessary before clinical deployment. Predictions are intended to support further research into surgical decision support and do not replace specialist assessment.
