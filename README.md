@@ -73,10 +73,6 @@ See the [MARGIN training overview](docs/margin-training.md).
 
 In this retrospective study, resection planes were reconstructed using surgical records and postoperative CT. The framework has not yet been validated for comparing multiple alternative surgical plans for an individual patient.
 
-## MARGIN architecture
-
-![MARGIN architecture](assets/margin-architecture.png)
-
 ## Research findings
 
 The manuscript reports a retrospective multicenter study of **410 patients** from **three centers**, including an independent external test set of **176 patients**.
