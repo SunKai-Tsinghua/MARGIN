@@ -149,7 +149,7 @@ These supplied PNGs document training progress. The curves, including pseudo-Dic
 
 ## Research use and interpretation
 
-In the reported study, two senior radiologists reviewed and refined automated masks before 3D reconstruction and downstream analysis. Review segmentation quality before using predictions. The MARGIN external-test AUROC of 0.87 concerns margin-status prediction, not segmentation quality. No independent segmentation-performance claim is made here. A project-specific code/weight license has not yet been specified; upstream dependencies retain their own licenses.
+In the reported study, two senior radiologists reviewed and refined automated masks before 3D reconstruction and downstream analysis. Review segmentation quality before using predictions. MARGIN margin-status prediction results do not measure segmentation quality. No independent segmentation-performance claim is made here. A project-specific code/weight license has not yet been specified; upstream dependencies retain their own licenses.
 
 ## Upstream references
 
