@@ -33,4 +33,3 @@ No runnable training command is provided yet because the released code package a
 
 Part 1 supplies the segmentation component. In the reported study, model-generated masks were reviewed and refined by radiologists, then used to construct 3D biliary models. Resection planes were retrospectively reconstructed from surgical records and postoperative CT. Users should account for this study-specific workflow when interpreting the results.
 
-![MARGIN architecture](../assets/margin-architecture.png)
