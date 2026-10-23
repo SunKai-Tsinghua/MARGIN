@@ -96,16 +96,6 @@ In a paired reader study involving five hepatobiliary surgeons, mean accuracy in
 
 ![Model performance in internal and external cohorts](assets/model-performance.png)
 
-## Paper
-
-**Preoperative CT-Based Prediction of Margin Status along Resection Planes in Perihilar Cholangiocarcinoma**
-
-Kai Sun†, Tao Zhang†, Si-Yuan Wang†, Li Li, Dong-Liang Yang, Nan Jiang, Hai-Jing Ge, Ming-Yu Lin, Chang-Zhen Yang, Si-Qiao Shan, Hua Sun, Hang Xiao, Xue-Li Yuan, Jian-Ping Zeng, Can-Hong Xiang, Zhiyu Chen, Juan Liu, Fu-Chun Sun*, Jia-Hong Dong*, Shuo Jin*.
-
-† Equal contribution. * Corresponding authors.
-
-Paper link, publication metadata, and a formal citation will be added when available.
-
 ## Research scope and availability
 
 This is a research project. The reported study was retrospective, restricted to resected patients, and conducted within one country. Prospective validation remains necessary before clinical deployment. Predictions are intended to support further research into surgical decision support and do not replace specialist assessment.

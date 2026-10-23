@@ -57,10 +57,6 @@ MARGIN 融合以下三类特征：
 
 五名肝胆外科医师参与的配对阅片研究中，MARGIN 辅助下的平均准确率由 0.71 提高至 0.84，平均敏感度由 0.20 提高至 0.62，平均特异度维持在 0.94。
 
-## 论文
-
-**Preoperative CT-Based Prediction of Margin Status along Resection Planes in Perihilar Cholangiocarcinoma**
-
-完整作者信息见 [英文 README](README.md#paper)。论文链接、正式发表信息和引用格式将在可用时补充。
+## 研究用途与发布说明
 
 本项目属于研究用途，仍需前瞻性验证。代码和模型的许可条款将在各自正式发布时说明。

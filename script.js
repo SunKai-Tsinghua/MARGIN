@@ -27,19 +27,3 @@ tabs.forEach((tab, index) => {
     if (next !== undefined) { event.preventDefault(); activateTab(tabs[next], true); }
   });
 });
-
-document.getElementById('copy-title').addEventListener('click', async () => {
-  const title = document.querySelector('.paper-grid h2').textContent.trim();
-  const status = document.getElementById('copy-status');
-  try {
-    await navigator.clipboard.writeText(title);
-    status.textContent = 'Paper title copied.';
-  } catch {
-    const selection = window.getSelection();
-    const range = document.createRange();
-    range.selectNodeContents(document.querySelector('.paper-grid h2'));
-    selection.removeAllRanges();
-    selection.addRange(range);
-    status.textContent = 'Title selected. Press Ctrl+C or ⌘C to copy.';
-  }
-});
