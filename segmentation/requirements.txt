@@ -1,0 +1,15 @@
+# Compatibility baseline for the supplied nnU-Net 2.5.1 source.
+# Inference has not been executed for this release.
+# Install a CUDA-compatible PyTorch 2.5.1 build separately for GPU inference.
+nnunetv2==2.5.1
+torch==2.5.1
+dynamic-network-architectures==0.3.1
+acvl-utils==0.2.2
+numpy==1.26.4
+scipy==1.14.1
+pandas==2.2.3
+scikit-image==0.24.0
+scikit-learn==1.5.2
+imagecodecs==2024.12.30
+tifffile==2024.9.20
+matplotlib==3.9.2
